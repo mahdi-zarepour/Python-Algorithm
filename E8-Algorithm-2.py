@@ -43,22 +43,16 @@ def top(array):
         else:
             values[i] = 1
         
-    list_values_value = [i for i in values.values()]
-    f_value = bubble_sort(list_values_value)[-1]
+    f_value = bubble_sort(list(values.values()))[::-1]
 
     for i in values.keys():
-        if values[i] == f_value:
+        if values[i] == f_value[0]:
             result = [i]
         else:
             continue
 
-    return result, f_value
+    return result, f_value[0]
 
 
 
 print(top([1, 1, 2, 2, 3, 3, 3, 3, 3]))
-
-
-
-
-    
